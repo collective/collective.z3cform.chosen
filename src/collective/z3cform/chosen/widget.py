@@ -92,6 +92,7 @@ class ChosenBase(select.SelectWidget, Explicit):
     security.declareObjectPublic()
 
     _bound_source = None
+    ignoreMissing = False
 
     input_template = ViewPageTemplateFile('input.pt')
     display_template = ViewPageTemplateFile('display.pt')
