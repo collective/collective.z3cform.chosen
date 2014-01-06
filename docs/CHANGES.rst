@@ -4,7 +4,9 @@ Changelog
 1.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Set ignoreMissing to True:
+  avoid error if a value is missing from vocabulary.
+  [thomasdesvenain]
 
 
 1.0 (2012-06-06)

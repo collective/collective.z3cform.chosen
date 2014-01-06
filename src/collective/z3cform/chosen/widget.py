@@ -97,6 +97,8 @@ class ChosenBase(select.SelectWidget, Explicit):
     display_template = ViewPageTemplateFile('display.pt')
     hidden_template = ViewPageTemplateFile('hidden.pt')
 
+    ignoreMissing = True
+
     # load values from bounded source at initialisation
     populate_select = False
 
