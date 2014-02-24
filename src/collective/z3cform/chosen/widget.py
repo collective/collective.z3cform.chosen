@@ -71,12 +71,10 @@ class ChosenAutocompleteSearch(BrowserView):
         # during traversal before.
         self.context.update()
         source = self.context.bound_source
-
         if query:
             terms = set(source.search(query))
         else:
             terms = set()
-
         self.request.response.setHeader(
             'Content-Type', 'application/javascript')
         return demjson.dumps(
@@ -92,6 +90,7 @@ class ChosenBase(select.SelectWidget, Explicit):
     security.declareObjectPublic()
 
     _bound_source = None
+    ignoreMissing = True
 
     input_template = ViewPageTemplateFile('input.pt')
     display_template = ViewPageTemplateFile('display.pt')
@@ -104,12 +103,11 @@ class ChosenBase(select.SelectWidget, Explicit):
     onselect = ""
     readonly = False
     prompt = True
-    promptMessage = _('select a value or '
-                      'this for no value...')
+    promptMessage = _('Select a value')
     noValueMessage = _('no value')
     noValueToken = _(u'(nothing)')
     no_results_text = _("No results found")
-    style = "width:280px;"
+    style = ""
     multiple = False
     allow_single_deselect = False
     search_url = "%s/++widget++%s/@@chosen-autocomplete-search"
@@ -121,7 +119,8 @@ class ChosenBase(select.SelectWidget, Explicit):
             $('#%(id)s-select').data('klass','%(klass)s').data('title','%(title)s');
             $('#%(id)s-select').chosen({
                 allow_single_deselect: %(allow_single_deselect)s,
-                no_results_text: '%(no_results_text)s'
+                no_results_text: '%(no_results_text)s',
+                width: '%(width)s'
             });
             %(js_extra)s
         });
@@ -135,12 +134,15 @@ class ChosenBase(select.SelectWidget, Explicit):
             {
                 method: '%(method)s',
                 url: '%(url)s',
-                dataType: '%(datatype)s'
+                dataType: '%(datatype)s',
+                minTermLength: 2,
+                afterTypeDelay: 0
             },
             %(ajax_callback)s,
             null,
             {allow_single_deselect:%(allow_single_deselect)s,
-             no_results_text: '%(no_results_text)s'}
+             no_results_text: '%(no_results_text)s',
+             width: '%(width)s'}
           );
           %(js_extra)s
       });
@@ -282,6 +284,7 @@ class ChosenBase(select.SelectWidget, Explicit):
             datatype = self.datatype,
             ajax_callback = self.ajax_callback,
             no_results_text=self.no_results_text,
+            width=self.width,
             js_extra=self.js_extra())
 
     @property
@@ -320,6 +323,7 @@ class ChosenBase(select.SelectWidget, Explicit):
 class MultiChosenBase(ChosenBase):
     """."""
     multiple = True
+
     @property
     def source(self):
         return self.field.bind(self.context).value_type.source
@@ -328,11 +332,11 @@ class MultiChosenBase(ChosenBase):
 class AjaxChosenBase(ChosenBase):
     """."""
 
-
 class MultiAjaxChosenBase(AjaxChosenBase,
                           MultiChosenBase):
     """."""
     multiple = True
+
     @property
     def source(self):
         return MultiChosenBase.source.fget(self)
@@ -347,13 +351,15 @@ class ChosenSelectionWidget(ChosenBase):
     """
     klass = u'chosen-selection-widget'
     populate_select = True
-
+    width = "280px"
 
 class ChosenMultiSelectionWidget(MultiChosenBase):
     """widget that allows multiple selection
     """
     populate_select = True
     klass = u'chosen-multiselection-widget'
+    width = "100%"
+    promptMessage = _('Select values')
 
 
 class AjaxChosenSelectionWidget(AjaxChosenBase):
@@ -361,13 +367,19 @@ class AjaxChosenSelectionWidget(AjaxChosenBase):
     """
     klass = u'ajaxchosen-selection-widget'
     js_template = ChosenBase.ajax_js_template
+    width="280px"
+    promptMessage = _('Enter value')
 
-
+    
 class AjaxChosenMultiSelectionWidget(MultiAjaxChosenBase):
     """Autocomplete widget that allows multiple selection
     """
     klass = u'ajaxchosen-multiselection-widget'
     js_template = ChosenBase.ajax_js_template
+    promptMessage = _('Select values')
+    width="100%"
+    promptMessage = _('Enter values')
+
 
 
 @implementer(z3c.form.interfaces.IFieldWidget)
