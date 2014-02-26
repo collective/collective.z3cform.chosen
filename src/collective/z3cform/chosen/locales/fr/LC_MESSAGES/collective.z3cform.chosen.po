@@ -35,7 +35,7 @@ msgstr "Aucun résultat trouvé"
 
 #: widget.py:106
 msgid "Select a value"
-msgstr "Sélectionner une valeur"
+msgstr "Sélectionnez une valeur"
 
 #: widget.py:362
 msgid "Select values"
