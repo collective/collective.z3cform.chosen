@@ -147,16 +147,17 @@ Simulates partial rendering:
                 $('#form-widgets-favourite_city-select').data('klass','chosen-selection-widget required choice-field').data('title','None');
                 $('#form-widgets-favourite_city-select').chosen({
                     allow_single_deselect: false,
-                    no_results_text: 'No results found'
+                    no_results_text: 'No results found',
+                    width: '280px'
                 });
     <BLANKLINE>
             });
         })(jQuery);
         </script>
     <div id="form-widgets-favourite_city-chosen" class="chosen-selection-widget required choice-field">
-      <select id="form-widgets-favourite_city-select" style="width:280px;" onselect="" data-placeholder="Select a value here" name="form.widgets.favourite_city:list">
+      <select data-placeholder="Select a value" id="form-widgets-favourite_city-select" name="form.widgets.favourite_city:list" onselect="" style="" >
     <BLANKLINE>
-          <option id="form-widgets-favourite_city-novalue" value="(nothing)" selected="selected">Select a value here</option>
+          <option id="form-widgets-favourite_city-novalue" value="(nothing)" selected="selected">Select a value</option>
     <BLANKLINE>
     <BLANKLINE>
     <BLANKLINE>
@@ -233,11 +234,11 @@ Our widget also handle display mode
 
     >>> form.widgets['favourite_city'].mode = 'display'
     >>> print form.widgets['favourite_city'].render().strip()
-    <span id="form-widgets-favourite_city" class="chosen-selection-widget required choice-field" style="width:280px;"><span class="selected-option">Palermo</span></span>
+     <span id="form-widgets-favourite_city" class="chosen-selection-widget required choice-field" style=""><span class="selected-option">Palermo</span></span>
 
     >>> form.widgets['visited_cities'].mode = 'display'
     >>> print form.widgets['visited_cities'].render().strip()
-    <span id="form-widgets-visited_cities" class="chosen-multiselection-widget required list-field" style="width:280px;"><span class="selected-option">Palermo</span>, <span class="selected-option">Bologna</span></span>
+    <span id="form-widgets-visited_cities" class="chosen-multiselection-widget required list-field" style=""><span class="selected-option">Palermo</span>, <span class="selected-option">Bologna</span></span>
 
 Our widget also handle hidden mode
 
