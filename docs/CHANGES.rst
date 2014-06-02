@@ -4,7 +4,10 @@ Changelog
 1.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Set width, and apply as chosen parameter rather than styling widgets with a
+  specific width; doing so ensures chosen will set a valid width when it's 
+  initialized off-screen or when the element applied to it is invisible.
+  [damilgra]
 
 
 1.1 (2013-06-04)
