@@ -4,7 +4,8 @@ Changelog
 1.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Updated french translations.
+  [cedricmessiant]
 
 
 1.1 (2013-06-04)
