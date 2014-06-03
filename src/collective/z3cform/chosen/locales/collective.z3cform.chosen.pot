@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-05-31 09:47+0000\n"
+"POT-Creation-Date: 2014-02-24 10:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,19 +14,31 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ./widget.py:109
+#: ./widget.py:108
 msgid "(nothing)"
 msgstr ""
 
-#: ./widget.py:110
+#: ./widget.py:371
+msgid "Enter value"
+msgstr ""
+
+#: ./widget.py:381
+msgid "Enter values"
+msgstr ""
+
+#: ./widget.py:109
 msgid "No results found"
 msgstr ""
 
-#: ./widget.py:107
-msgid "Select a value here"
+#: ./widget.py:106
+msgid "Select a value"
 msgstr ""
 
-#: ./widget.py:108
+#: ./widget.py:362
+msgid "Select values"
+msgstr ""
+
+#: ./widget.py:107
 msgid "no value"
 msgstr ""
 

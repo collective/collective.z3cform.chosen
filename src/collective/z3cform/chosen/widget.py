@@ -370,13 +370,12 @@ class AjaxChosenSelectionWidget(AjaxChosenBase):
     width="280px"
     promptMessage = _('Enter value')
 
-    
+
 class AjaxChosenMultiSelectionWidget(MultiAjaxChosenBase):
     """Autocomplete widget that allows multiple selection
     """
     klass = u'ajaxchosen-multiselection-widget'
     js_template = ChosenBase.ajax_js_template
-    promptMessage = _('Select values')
     width="100%"
     promptMessage = _('Enter values')
 
