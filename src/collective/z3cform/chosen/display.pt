@@ -19,8 +19,8 @@
                       onkeyup view/onkeyup"><tal:block
     repeat="value view/displayValue"
     ><span class="selected-option"
-           tal:content="value"
-    /><tal:block condition="not:repeat/value/end">, </tal:block
+           tal:content="value">
+     </span><tal:block condition="not:repeat/value/end">, </tal:block
   ></tal:block
 ></span>
 </html>

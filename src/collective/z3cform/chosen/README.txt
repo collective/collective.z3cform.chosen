@@ -142,6 +142,7 @@ Simulates partial rendering:
     >>> form.update()
 
     >>> print form.widgets['favourite_city'].render().replace("...", "") # doctest: +ELLIPSIS +NORMALIZE_WHITESPACE +REPORT_UDIFF
+    <BLANKLINE>
     <script type="text/javascript">    (function($) {
             $().ready(function() {
                 $('#form-widgets-favourite_city-select').data('klass','chosen-selection-widget required choice-field').data('title','None');
@@ -161,17 +162,13 @@ Simulates partial rendering:
     <BLANKLINE>
     <BLANKLINE>
     <BLANKLINE>
-    <BLANKLINE>
           <option id="form-widgets-favourite_city-0" value="bologna">Bologna</option>
-    <BLANKLINE>
     <BLANKLINE>
     <BLANKLINE>
           <option id="form-widgets-favourite_city-1" value="palermo">Palermo</option>
     <BLANKLINE>
     <BLANKLINE>
-    <BLANKLINE>
           <option id="form-widgets-favourite_city-2" value="sorrento">Sorrento</option>
-    <BLANKLINE>
     <BLANKLINE>
     <BLANKLINE>
           <option id="form-widgets-favourite_city-3" value="torino">Torino</option>

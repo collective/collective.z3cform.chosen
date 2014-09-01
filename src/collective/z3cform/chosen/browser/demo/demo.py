@@ -1,5 +1,4 @@
 from plone.z3cform import layout
-from Products.CMFCore.utils import getToolByName
 from z3c.form import form, button, field
 from z3c.formwidget.query.interfaces import IQuerySource
 from zope.component import adapts

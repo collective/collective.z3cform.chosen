@@ -1,11 +1,18 @@
 Changelog
 =========
 
+1.2.1 (Unreleased)
+------------------
+
+- Pyflakes, pep8, unused code removed, etc.
+  [thomasdesvenain]
+
+
 1.2 (2014-06-03)
 ----------------
 
 - Set width, and apply as chosen parameter rather than styling widgets with a
-  specific width; doing so ensures chosen will set a valid width when it's 
+  specific width; doing so ensures chosen will set a valid width when it's
   initialized off-screen or when the element applied to it is invisible.
   [damilgra]
 
