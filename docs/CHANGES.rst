@@ -4,6 +4,9 @@ Changelog
 1.2.1 (Unreleased)
 ------------------
 
+- Widget works when the field is initially hidden (for instance in an overlay).
+  [thomasdesvenain]
+
 - Pyflakes, pep8, unused code removed, etc.
   [thomasdesvenain]
 

@@ -126,6 +126,7 @@ class ChosenBase(select.SelectWidget, Explicit):
                 width: '%(width)s'
             });
             %(js_extra)s
+            $('#formfield-%(id)s').find('.chzn-container, .chzn-results, .chzn-drop').css({'min-width': '180px'});
         });
     })(jQuery);
     """
@@ -148,6 +149,7 @@ class ChosenBase(select.SelectWidget, Explicit):
              width: '%(width)s'}
           );
           %(js_extra)s
+          $('#formfield-%(id)s').find('.chzn-container, .chzn-results, .chzn-drop').css({'min-width': '180px'});
       });
     })(jQuery);
     """
