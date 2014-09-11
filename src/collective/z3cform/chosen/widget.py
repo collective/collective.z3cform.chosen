@@ -139,7 +139,6 @@ class ChosenBase(select.SelectWidget, Explicit):
                 afterTypeDelay: 0
             },
             %(ajax_callback)s,
-            null,
             {allow_single_deselect:%(allow_single_deselect)s,
              no_results_text: '%(no_results_text)s',
              width: '%(width)s'}
