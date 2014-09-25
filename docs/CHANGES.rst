@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.2.1 (Unreleased)
+1.2.1 (2014-09-25)
 ------------------
 
 - Widget works when the field is initially hidden (for instance in an overlay).
