@@ -28,3 +28,6 @@ dist
 *.tmp*
 var
 sys
+.project
+.pydevproject
+.settings/
