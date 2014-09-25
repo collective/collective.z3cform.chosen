@@ -133,7 +133,7 @@ class IntegrationTesting(LayerMixin, BIntegrationTesting):
 class FunctionalTesting(LayerMixin, BFunctionalTesting):
     def testSetUp(self):
         BFunctionalTesting.testSetUp(self)
-        LayerMixin.testSetUp(self) 
+        LayerMixin.testSetUp(self)
 
 COLLECTIVE_Z3CFORM_CHOSEN_FIXTURE             = CollectiveZ3cformChosenLayer()
 COLLECTIVE_Z3CFORM_CHOSEN_INTEGRATION_TESTING = IntegrationTesting(name = "CollectiveZ3cformChosen:Integration")

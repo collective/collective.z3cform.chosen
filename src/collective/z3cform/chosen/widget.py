@@ -22,6 +22,8 @@ from z3c.formwidget.query.widget import (QueryTerms, SourceTerms)
 
 from collective.z3cform.chosen import MessageFactory as _
 from collective.z3cform.chosen.interfaces import IChosenWidget
+
+
 demjson.dumps = demjson.encode
 demjson.loads = demjson.decode
 
@@ -30,6 +32,7 @@ def jsbool(value):
         return 'true'
     else:
         return 'false'
+
 
 class ChosenAutocompleteSearch(BrowserView):
     def validate_access(self):
@@ -123,6 +126,7 @@ class ChosenBase(select.SelectWidget, Explicit):
                 width: '%(width)s'
             });
             %(js_extra)s
+            $('#formfield-%(id)s').find('.chzn-container, .chzn-results, .chzn-drop').css({'min-width': '180px'});
         });
     })(jQuery);
     """
@@ -144,6 +148,7 @@ class ChosenBase(select.SelectWidget, Explicit):
              width: '%(width)s'}
           );
           %(js_extra)s
+          $('#formfield-%(id)s').find('.chzn-container, .chzn-results, .chzn-drop').css({'min-width': '180px'});
       });
     })(jQuery);
     """
@@ -184,7 +189,6 @@ class ChosenBase(select.SelectWidget, Explicit):
         """
         form_url = self.request.getURL()
         return self.search_url % (form_url, self.name)
-
 
     # Override this to insert additional JavaScript
     def js_extra(self):
@@ -277,11 +281,11 @@ class ChosenBase(select.SelectWidget, Explicit):
             id=self.id,
             url=self.autocomplete_url,
             klass=self.klass,
-            allow_single_deselect=jsbool( self.allow_single_deselect),
+            allow_single_deselect=jsbool(self.allow_single_deselect),
             title=self.title,
-            method = self.method,
-            datatype = self.datatype,
-            ajax_callback = self.ajax_callback,
+            method=self.method,
+            datatype=self.datatype,
+            ajax_callback=self.ajax_callback,
             no_results_text=self.no_results_text,
             width=self.width,
             js_extra=self.js_extra())
@@ -304,7 +308,7 @@ class ChosenBase(select.SelectWidget, Explicit):
                     })
             for count, term in enumerate(self.terms):
                 selected = self.isSelected(term)
-                id = '%s-%i' % (self.id, count)
+                item_id = '%s-%i' % (self.id, count)
                 content = term.token
                 if ITitledTokenizedTerm.providedBy(term):
                     content = translate(
@@ -312,10 +316,10 @@ class ChosenBase(select.SelectWidget, Explicit):
                         context=self.request,
                         default=term.title)
                 items.append(
-                    {'id':id,
-                     'value':term.token,
-                     'content':content,
-                     'selected':selected})
+                    {'id': item_id,
+                     'value': term.token,
+                     'content': content,
+                     'selected': selected})
         return items
 
 
@@ -330,6 +334,7 @@ class MultiChosenBase(ChosenBase):
 
 class AjaxChosenBase(ChosenBase):
     """."""
+
 
 class MultiAjaxChosenBase(AjaxChosenBase,
                           MultiChosenBase):
@@ -351,6 +356,7 @@ class ChosenSelectionWidget(ChosenBase):
     klass = u'chosen-selection-widget'
     populate_select = True
     width = "280px"
+
 
 class ChosenMultiSelectionWidget(MultiChosenBase):
     """widget that allows multiple selection
@@ -379,7 +385,6 @@ class AjaxChosenMultiSelectionWidget(MultiAjaxChosenBase):
     promptMessage = _('Enter values')
 
 
-
 @implementer(z3c.form.interfaces.IFieldWidget)
 def ChosenFieldWidget(field, request):
     return z3c.form.widget.FieldWidget(field,
@@ -402,4 +407,3 @@ def AjaxChosenFieldWidget(field, request):
 def AjaxChosenMultiFieldWidget(field, request):
     return z3c.form.widget.FieldWidget(field,
         AjaxChosenMultiSelectionWidget(request))
-

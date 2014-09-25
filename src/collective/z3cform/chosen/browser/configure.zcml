@@ -11,21 +11,8 @@
       interface="collective.z3cform.chosen.interfaces.IThemeSpecific"
       type="zope.publisher.interfaces.browser.IBrowserSkinType"
     />
-  <interface  name="collective.z3cform.chosen" interface="collective.z3cform.chosen.interfaces.ILayer" />
-
-  <!-- Viewlets registration -->
-
-  <!-- Zope 3 browser views -->
-  <!--
-    <browser:page
-        layer="collective.z3cform.chosen.interfaces.ILayer"
-        for="collective.z3cform.chosen.interface.mycontent"
-        name="MyView"
-        class=".view.MyView"
-        allowed_interface=".view.IMyView"
-        permission="zope2.View"
-      />
-  -->
+  <interface name="collective.z3cform.chosen"
+             interface="collective.z3cform.chosen.interfaces.ILayer" />
 
   <!-- Zope 3 browser resources -->
 
