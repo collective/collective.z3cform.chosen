@@ -152,6 +152,7 @@ Simulates partial rendering:
                     width: '280px'
                 });
     <BLANKLINE>
+                $('#formfield-form-widgets-favourite_city').find('.chzn-container, .chzn-results, .chzn-drop').css({'min-width': '180px'});
             });
         })(jQuery);
         </script>
