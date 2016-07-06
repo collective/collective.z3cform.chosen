@@ -108,7 +108,7 @@ class ChosenBase(select.SelectWidget, Explicit):
     prompt = True
     promptMessage = _('Select a value')
     noValueMessage = _('no value')
-    noValueToken = _(u'(nothing)')
+    noValueToken = u'(nothing)'
     no_results_text = _("No results found")
     style = ""
     multiple = False
