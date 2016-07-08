@@ -4,7 +4,8 @@ Changelog
 1.2.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Do not translate the no value token to avoid an error when translated.
+  [mpeeters]
 
 
 1.2.1 (2014-09-25)
