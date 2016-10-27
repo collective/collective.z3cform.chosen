@@ -1,0 +1,46 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+msgid ""
+msgstr ""
+"Project-Id-Version: collective.z3cform.chosen 1.0\n"
+"POT-Creation-Date: 2016-02-24 10:53+0000\n"
+"PO-Revision-Date: 2016-10-27 14:20+0200\n"
+"Last-Translator: Bernd Henker <bhenker@spe-henker.de>\n"
+"Language-Team: DE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-Code: de\n"
+"Language-Name: German\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: collective.z3cform.chosen\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#: widget.py:108
+msgid "(nothing)"
+msgstr "(nichts)"
+
+#: widget.py:371
+msgid "Enter value"
+msgstr "Wert eingeben"
+
+#: widget.py:381
+msgid "Enter values"
+msgstr "Werte eingeben"
+
+#: widget.py:109
+msgid "No results found"
+msgstr "Kein Ergebnis gefunden"
+
+#: widget.py:106
+msgid "Select a value"
+msgstr "Wert auswählen"
+
+#: widget.py:362
+msgid "Select values"
+msgstr "Werte auswählen"
+
+#: widget.py:107
+msgid "no value"
+msgstr "kein Wert"
