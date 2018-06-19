@@ -50,7 +50,7 @@ setup(
         'ordereddict',
         'plone.app.upgrade',
         # with_ploneproduct_jschosen
-        'collective.js.chosen',
+        'collective.js.chosen >= 1.2',
         'z3c.formwidget.query',
         # -*- Extra requirements: -*-
     ],
