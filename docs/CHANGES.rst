@@ -7,6 +7,8 @@ Changelog
 - Do not translate the no value token to avoid an error when translated.
   [mpeeters]
 
+- Added needed ajax parameter for corresponding collective.js.chosen
+  [cedricmessiant, sgeulette]
 
 1.2.1 (2014-09-25)
 ------------------
@@ -44,4 +46,3 @@ Changelog
 ----------------
 
 * Initial release [kiorky]
-
