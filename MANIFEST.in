@@ -1,4 +1,6 @@
-include *.rst *.cfg Makefile .*yml
+include *.rst *.cfg Makefile .*yml *.txt
 recursive-include src *
 recursive-include docs *
-global-exclude *.pyc .*.cfg
+global-exclude *.pyc *.x.cfg
+exclude bootstrap.py
+prune .cache
