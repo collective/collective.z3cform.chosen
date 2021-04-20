@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.2.2 (unreleased)
+1.2.2 (2021-04-20)
 ------------------
 
 - Do not translate the no value token to avoid an error when translated.
