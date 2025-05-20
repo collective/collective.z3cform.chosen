@@ -23,7 +23,7 @@ Companies
 Authors
 ------------
 
-- kiorky  <kiorky@cryptelium.net>
+- Makina Corpus <freesoftware@makina-corpus.com>
 
 Contributors
 -----------------
